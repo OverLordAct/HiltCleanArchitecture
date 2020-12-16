@@ -31,8 +31,7 @@
             android:id="@+id/userIdInput"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="User ID"
-            android:inputType="number" />
+            android:hint="User ID" />
 
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -50,8 +49,7 @@
             android:id="@+id/passwordInput"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Password"
-            android:inputType="number" />
+            android:hint="Password" />
 
     </com.google.android.material.textfield.TextInputLayout>
 

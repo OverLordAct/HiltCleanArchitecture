@@ -34,4 +34,9 @@ class UserComponentHandlerImpl @Inject constructor(
             .remove("password")
             .apply()
     }
+
+    override fun isLoggedIn(): Boolean {
+        val username = preferences.getString("username", "")
+        return !username?.isEmpty()!!
+    }
 }

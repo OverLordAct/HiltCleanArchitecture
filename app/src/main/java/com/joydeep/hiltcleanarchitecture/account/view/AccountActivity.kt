@@ -1,12 +1,30 @@
 package com.joydeep.hiltcleanarchitecture.account.view
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import com.joydeep.hiltcleanarchitecture.R
+import androidx.activity.viewModels
+import androidx.appcompat.app.AppCompatActivity
+import com.joydeep.hiltcleanarchitecture.account.viewmodel.AccountActivityViewModel
+import com.joydeep.hiltcleanarchitecture.databinding.ActivityAccountBinding
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class AccountActivity : AppCompatActivity() {
+
+    private val viewModel: AccountActivityViewModel by viewModels()
+    private lateinit var binding: ActivityAccountBinding
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_account)
+        binding = ActivityAccountBinding.inflate(layoutInflater)
+        setContentView(binding.root)
+
+        binding.refreshButton.setOnClickListener {
+            viewModel.refreshNotification()
+        }
+
+        binding.logoutButton.setOnClickListener {
+            viewModel.logout()
+            finish()
+        }
     }
 }

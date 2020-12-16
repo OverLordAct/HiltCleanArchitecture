@@ -1,12 +1,47 @@
 package com.joydeep.hiltcleanarchitecture.login.view
 
-import androidx.appcompat.app.AppCompatActivity
+import android.content.Intent
 import android.os.Bundle
-import com.joydeep.hiltcleanarchitecture.R
+import android.widget.Toast
+import androidx.activity.viewModels
+import androidx.appcompat.app.AppCompatActivity
+import com.joydeep.hiltcleanarchitecture.dashboard.view.DashboardActivity
+import com.joydeep.hiltcleanarchitecture.databinding.ActivityLoginBinding
+import com.joydeep.hiltcleanarchitecture.login.viewmodel.LoginActivityViewModel
+import com.joydeep.hiltcleanarchitecture.login.viewmodel.LoginStatus
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class LoginActivity : AppCompatActivity() {
+
+    private val viewModel: LoginActivityViewModel by viewModels()
+    private lateinit var binding: ActivityLoginBinding
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_login)
+        binding = ActivityLoginBinding.inflate(layoutInflater)
+        setContentView(binding.root)
+
+        viewModel.loginStatusLiveData.observe(this, ::onLoginStatusUpdate)
+
+        binding.submitButton.setOnClickListener {
+            val username = binding.userIdInput.text.toString()
+            val password = binding.passwordInput.text.toString()
+
+            viewModel.login(username, password)
+        }
+    }
+
+    private fun onLoginStatusUpdate(loginStatus: LoginStatus) {
+        when (loginStatus) {
+            is LoginStatus.Success -> {
+                val intent = Intent(this, DashboardActivity::class.java)
+                startActivity(intent)
+                finish()
+            }
+            is LoginStatus.Failure -> {
+                Toast.makeText(this, "Something went wrong", Toast.LENGTH_SHORT).show()
+            }
+        }
     }
 }
