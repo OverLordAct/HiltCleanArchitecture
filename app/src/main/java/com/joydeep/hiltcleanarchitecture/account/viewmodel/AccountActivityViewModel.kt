@@ -12,6 +12,7 @@ class AccountActivityViewModel @ViewModelInject constructor(
     private val userComponentHandler: UserComponentHandler
 ) : ViewModel() {
 
+
     private var userDataRepository: UserDataRepository
 
     init {

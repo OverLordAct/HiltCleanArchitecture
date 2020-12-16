@@ -15,6 +15,12 @@ class UserComponentHandlerImpl @Inject constructor(
     var userComponent: UserComponent? = null
         private set
 
+    init {
+        if (isLoggedIn()) {
+            userComponent = userComponentFactory.create()
+        }
+    }
+
     override fun generatedComponent(): UserComponent {
         return userComponent!!
     }
