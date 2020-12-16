@@ -2,7 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.joydeep.hiltcleanarchitecture">
 
-    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <application
         android:name=".HiltCleanArchitectureApplication"
@@ -12,7 +12,11 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.HiltCleanArchitecture">
-        <activity android:name=".main.ui.MainActivity">
+        <activity android:name=".splash.view.SplashActivity"></activity>
+        <activity android:name=".account.view.AccountActivity" />
+        <activity android:name=".dashboard.view.DashboardActivity" />
+        <activity android:name=".login.view.LoginActivity" />
+        <activity android:name=".main.view.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

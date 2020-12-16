@@ -1,4 +1,4 @@
-package com.joydeep.hiltcleanarchitecture.di
+package com.joydeep.hiltcleanarchitecture.common.di
 
 import com.google.gson.Gson
 import com.google.gson.GsonBuilder

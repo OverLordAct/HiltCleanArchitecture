@@ -1,4 +1,4 @@
-package com.joydeep.hiltcleanarchitecture.main.ui
+package com.joydeep.hiltcleanarchitecture.main.view
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
