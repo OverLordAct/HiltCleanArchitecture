@@ -5,32 +5,33 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.joydeep.domain.common.usecase.BaseUseCase
-import com.joydeep.domain.login.entity.Users
+import com.joydeep.domain.login.entity.UserResponse
+import com.joydeep.domain.login.entity.UsersResponse
 import com.joydeep.domain.login.usecase.GetAllUsersUseCase
 import com.joydeep.domain.login.usecase.GetUserUseCase
 import kotlinx.coroutines.launch
 
-class MainActivityViewModel @ViewModelInject constructor(
+class EmployeeActivityViewModel @ViewModelInject constructor(
     private val getAllUsersUseCase: GetAllUsersUseCase,
     private val getUserUseCase: GetUserUseCase
 ) : ViewModel() {
 
-    var allUsersStatusLiveData = MutableLiveData<UserStatus<Users>>()
-    var userStatusLiveData = MutableLiveData<UserStatus<Users.User>>()
+    var userStatusLiveData = MutableLiveData<UserStatus<List<UsersResponse.User>>>()
 
-    private val allUsersUseCaseCallback = object : BaseUseCase.Callback<Users> {
-        override fun onSuccess(result: Users) {
-            allUsersStatusLiveData.value = UserStatus.Success(result)
+    private val allUsersUseCaseCallback = object : BaseUseCase.Callback<UsersResponse> {
+        override fun onSuccess(result: UsersResponse) {
+            userStatusLiveData.value = UserStatus.Success(result.data)
         }
 
         override fun onError(throwable: Throwable) {
-            allUsersStatusLiveData.value = UserStatus.Failure(throwable.toString())
+            userStatusLiveData.value = UserStatus.Failure(throwable.toString())
         }
     }
 
-    private val userUseCaseCallback = object : BaseUseCase.Callback<Users.User> {
-        override fun onSuccess(result: Users.User) {
-            userStatusLiveData.value = UserStatus.Success(result)
+    private val userUseCaseCallback = object : BaseUseCase.Callback<UserResponse> {
+        override fun onSuccess(result: UserResponse) {
+            val userList = listOf(result.data)
+            userStatusLiveData.value = UserStatus.Success(userList)
         }
 
         override fun onError(throwable: Throwable) {

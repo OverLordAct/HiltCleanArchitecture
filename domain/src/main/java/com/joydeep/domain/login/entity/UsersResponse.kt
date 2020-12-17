@@ -2,7 +2,7 @@ package com.joydeep.domain.login.entity
 
 import com.google.gson.annotations.SerializedName
 
-data class Users(
+data class UsersResponse(
     @SerializedName("page") val page: Int,
     @SerializedName("per_page") val per_page: Int,
     @SerializedName("total") val total: Int,

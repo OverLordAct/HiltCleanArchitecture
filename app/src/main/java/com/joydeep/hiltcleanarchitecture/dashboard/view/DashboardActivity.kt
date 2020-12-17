@@ -7,6 +7,7 @@ import androidx.appcompat.app.AppCompatActivity
 import com.joydeep.hiltcleanarchitecture.account.view.AccountActivity
 import com.joydeep.hiltcleanarchitecture.dashboard.viewmodel.DashBoardActivityViewModel
 import com.joydeep.hiltcleanarchitecture.databinding.ActivityDashboardBinding
+import com.joydeep.hiltcleanarchitecture.employee.view.EmployeeActivity
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -35,7 +36,7 @@ class DashboardActivity : AppCompatActivity() {
         }
 
         binding.coworkersButton.setOnClickListener {
-            // TODO
+            startActivity(Intent(this, EmployeeActivity::class.java))
         }
     }
 
