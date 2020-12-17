@@ -1,4 +1,4 @@
-package com.joydeep.domain.usecase
+package com.joydeep.domain.common.usecase
 
 interface BaseUseCase<in P, out R> {
     interface Callback<in R> {

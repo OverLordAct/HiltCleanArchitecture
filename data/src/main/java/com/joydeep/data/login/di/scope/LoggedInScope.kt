@@ -1,4 +1,4 @@
-package com.joydeep.data.di.scope
+package com.joydeep.data.login.di.scope
 
 import javax.inject.Scope
 

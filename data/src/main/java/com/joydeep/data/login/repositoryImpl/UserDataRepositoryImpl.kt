@@ -1,7 +1,7 @@
-package com.joydeep.data.repositoryImpl
+package com.joydeep.data.login.repositoryImpl
 
-import com.joydeep.data.di.scope.LoggedInScope
-import com.joydeep.domain.repository.UserDataRepository
+import com.joydeep.data.login.di.scope.LoggedInScope
+import com.joydeep.domain.login.repository.UserDataRepository
 import javax.inject.Inject
 import kotlin.random.Random
 

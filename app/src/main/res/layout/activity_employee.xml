@@ -4,7 +4,18 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".main.view.MainActivity">
+    tools:context=".employee.view.EmployeeActivity">
+
+    <TextView
+        android:id="@+id/header"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:text="Search Database"
+        android:textAppearance="@style/TextAppearance.AppCompat.Headline"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/userIdLayout"
@@ -14,7 +25,7 @@
         android:layout_marginTop="20dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toBottomOf="@id/header">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/userIdInput"
@@ -26,14 +37,26 @@
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.button.MaterialButton
-        android:id="@+id/submitButton"
-        android:layout_width="wrap_content"
+        android:id="@+id/getUserButton"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_marginHorizontal="10dp"
         android:layout_marginTop="20dp"
         android:text="Get User Details"
-        app:layout_constraintEnd_toEndOf="@id/userIdLayout"
-        app:layout_constraintStart_toStartOf="@id/userIdLayout"
+        app:layout_constraintEnd_toStartOf="@id/getAllButton"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/userIdLayout" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/getAllButton"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="10dp"
+        android:text="Get All Employees"
+        app:layout_constraintBottom_toBottomOf="@id/getUserButton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/getUserButton"
+        app:layout_constraintTop_toTopOf="@id/getUserButton" />
 
     <TextView
         android:id="@+id/result"

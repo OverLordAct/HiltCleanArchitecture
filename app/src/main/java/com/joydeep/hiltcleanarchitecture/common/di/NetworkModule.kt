@@ -2,9 +2,9 @@ package com.joydeep.hiltcleanarchitecture.common.di
 
 import com.google.gson.Gson
 import com.google.gson.GsonBuilder
-import com.joydeep.data.api.Api
-import com.joydeep.data.repositoryImpl.UserRepositoryImpl
-import com.joydeep.domain.repository.UserRepository
+import com.joydeep.data.login.api.Api
+import com.joydeep.data.login.repositoryImpl.UserRepositoryImpl
+import com.joydeep.domain.login.repository.UserRepository
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn

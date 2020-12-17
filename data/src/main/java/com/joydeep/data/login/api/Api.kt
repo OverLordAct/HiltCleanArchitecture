@@ -1,6 +1,6 @@
-package com.joydeep.data.api
+package com.joydeep.data.login.api
 
-import com.joydeep.domain.entity.Users
+import com.joydeep.domain.login.entity.Users
 import retrofit2.http.GET
 import retrofit2.http.Path
 import retrofit2.http.Query

@@ -1,33 +1,35 @@
-package com.joydeep.hiltcleanarchitecture.main.view
+package com.joydeep.hiltcleanarchitecture.employee.view
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import android.widget.Toast
 import androidx.activity.viewModels
-import com.joydeep.domain.entity.Users
-import com.joydeep.hiltcleanarchitecture.databinding.ActivityMainBinding
-import com.joydeep.hiltcleanarchitecture.main.viewmodel.MainActivityViewModel
-import com.joydeep.hiltcleanarchitecture.main.viewmodel.UserStatus
+import androidx.appcompat.app.AppCompatActivity
+import com.joydeep.domain.login.entity.Users
+import com.joydeep.hiltcleanarchitecture.databinding.ActivityEmployeeBinding
+import com.joydeep.hiltcleanarchitecture.employee.viewmodel.MainActivityViewModel
+import com.joydeep.hiltcleanarchitecture.employee.viewmodel.UserStatus
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
-class MainActivity : AppCompatActivity() {
+class EmployeeActivity : AppCompatActivity() {
 
     private val viewModel: MainActivityViewModel by viewModels()
-    private lateinit var binding: ActivityMainBinding
+    private lateinit var binding: ActivityEmployeeBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = ActivityMainBinding.inflate(layoutInflater)
+        binding = ActivityEmployeeBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        viewModel.usersStatusLiveData.observe(this, ::userStatusUpdate)
+        viewModel.allUsersStatusLiveData.observe(this, ::userStatusUpdate)
 
-        binding.submitButton.setOnClickListener {
-            val page = binding.userIdInput.text.toString().toInt()
+        binding.getAllButton.setOnClickListener {
+            viewModel.getAllUsers(1)
+        }
 
-            viewModel.getUsers(page)
+        binding.getUserButton.setOnClickListener {
+
         }
     }
 

@@ -1,4 +1,4 @@
-package com.joydeep.hiltcleanarchitecture.main.viewmodel
+package com.joydeep.hiltcleanarchitecture.employee.viewmodel
 
 sealed class UserStatus<out R> {
     object Loading: UserStatus<Nothing>()

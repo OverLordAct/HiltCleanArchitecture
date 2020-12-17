@@ -22,7 +22,7 @@
         <activity android:name=".account.view.AccountActivity" />
         <activity android:name=".dashboard.view.DashboardActivity" />
         <activity android:name=".login.view.LoginActivity" />
-        <activity android:name=".main.view.MainActivity" />
+        <activity android:name=".employee.view.EmployeeActivity" />
     </application>
 
 </manifest>

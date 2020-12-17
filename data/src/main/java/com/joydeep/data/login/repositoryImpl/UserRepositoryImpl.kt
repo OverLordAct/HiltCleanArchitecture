@@ -1,8 +1,8 @@
-package com.joydeep.data.repositoryImpl
+package com.joydeep.data.login.repositoryImpl
 
-import com.joydeep.data.api.Api
-import com.joydeep.domain.entity.Users
-import com.joydeep.domain.repository.UserRepository
+import com.joydeep.data.login.api.Api
+import com.joydeep.domain.login.entity.Users
+import com.joydeep.domain.login.repository.UserRepository
 import javax.inject.Inject
 
 class UserRepositoryImpl @Inject constructor(private val api: Api): UserRepository {

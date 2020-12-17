@@ -4,7 +4,7 @@ import android.util.Log
 import androidx.hilt.lifecycle.ViewModelInject
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import com.joydeep.domain.repository.UserDataRepository
+import com.joydeep.domain.login.repository.UserDataRepository
 import com.joydeep.hiltcleanarchitecture.login.di.entryPoint.UserComponentEntryPoint
 import com.joydeep.hiltcleanarchitecture.login.di.handler.UserComponentHandler
 import com.joydeep.hiltcleanarchitecture.login.entity.LoggedInUser

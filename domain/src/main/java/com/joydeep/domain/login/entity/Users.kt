@@ -1,4 +1,4 @@
-package com.joydeep.domain.entity
+package com.joydeep.domain.login.entity
 
 import com.google.gson.annotations.SerializedName
 
