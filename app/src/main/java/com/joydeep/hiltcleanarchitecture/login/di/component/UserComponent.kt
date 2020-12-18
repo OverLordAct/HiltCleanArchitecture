@@ -1,6 +1,6 @@
 package com.joydeep.hiltcleanarchitecture.login.di.component
 
-import com.joydeep.data.login.di.scope.LoggedInScope
+import com.joydeep.hiltcleanarchitecture.common.di.LoggedInScope
 import dagger.hilt.DefineComponent
 import dagger.hilt.components.SingletonComponent
 

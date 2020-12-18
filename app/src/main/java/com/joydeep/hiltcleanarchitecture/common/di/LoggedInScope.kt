@@ -1,4 +1,4 @@
-package com.joydeep.data.login.di.scope
+package com.joydeep.hiltcleanarchitecture.common.di
 
 import javax.inject.Scope
 
@@ -6,3 +6,4 @@ import javax.inject.Scope
 @MustBeDocumented
 @Retention(value = AnnotationRetention.RUNTIME)
 annotation class LoggedInScope
+

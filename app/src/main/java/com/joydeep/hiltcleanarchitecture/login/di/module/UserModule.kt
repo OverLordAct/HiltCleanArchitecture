@@ -1,9 +1,9 @@
 package com.joydeep.hiltcleanarchitecture.login.di.module
 
 import android.content.SharedPreferences
-import com.joydeep.data.login.di.scope.LoggedInScope
 import com.joydeep.data.login.repositoryImpl.UserDataRepositoryImpl
 import com.joydeep.domain.login.repository.UserDataRepository
+import com.joydeep.hiltcleanarchitecture.common.di.LoggedInScope
 import com.joydeep.hiltcleanarchitecture.login.di.component.UserComponent
 import com.joydeep.hiltcleanarchitecture.login.entity.LoggedInUser
 import dagger.Module
