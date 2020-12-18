@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.widget.Toast
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
+import androidx.lifecycle.observe
 import com.joydeep.hiltcleanarchitecture.dashboard.view.DashboardActivity
 import com.joydeep.hiltcleanarchitecture.databinding.ActivityLoginBinding
 import com.joydeep.hiltcleanarchitecture.login.viewmodel.LoginActivityViewModel
